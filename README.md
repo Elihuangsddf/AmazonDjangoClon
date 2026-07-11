@@ -69,8 +69,9 @@ Si quieres descargar el proyecto y jugar un rato con él, es súper fácil. Aqu�
 
 ---
 
-## ¿Te gustaría aportar algo?
+## Contacto
 
-Si encuentras algún bug, o se te ocurre cómo mejorar algo, ¡eres bienvenido! Solo haz un Fork, crea tu rama (`feature/tu-super-idea`), haz commit respetando el estándar `camelCase` del proyecto y mándame un Pull Request. Me encantará revisar tus aportes.
+Si tienes alguna pregunta, feedback o propuesta, ¡no dudes en escribirme!
 
-¡Gracias por pasarte a ver mi código!
+- **Correo:** elihuangper@gmail.com
+- **LinkedIn:** [Elihú Neftalí Ángeles Pérez](https://www.linkedin.com/in/elihú-neftalí-ángeles-pérez-866942377)
