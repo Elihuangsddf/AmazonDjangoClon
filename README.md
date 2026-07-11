@@ -1,4 +1,4 @@
-# ¡Hola! Bienvenido a mi Clon de Amazon 🛒
+# ¡Hola! Bienvenido a mi Clon de Amazon
 
 ¡Hola a todos! Este es mi proyecto de Clon de Amazon, una tienda virtual funcional en la que he estado trabajando para poner a prueba y mejorar mis habilidades de desarrollo web usando **Python** y **Django**. 
 
