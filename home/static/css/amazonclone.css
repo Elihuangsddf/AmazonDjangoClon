@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #eaeded;
+  
+  font-family: Arial, sans-serif;
+}
+
+
+.navBar {
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #131921;
+  
+}
+
+
+.main-content-wrapper {
+  padding-top: 100px;
+  
+}
+
+.itemCard img {
+  cursor: pointer;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: white;
+}
+
+.navBar a:hover {
+  color: white;
+  border: 1px solid white;
+  
+  border-radius: 2px;
+}
+
+.navBarrow {
+  background-color: #131921;
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.leftsection img {
+  width: 90px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.leftsection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.cart img {
+  width: 40px;
+}
+
+.navLast {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.cart a {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.itemSearchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.itemSearchBar input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 4px 0 0 4px;
+}
+
+
+.fa-search {
+  background-color: #febd69;
+  height: 40px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  border-radius: 0 4px 4px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.navOptions {
+  background-color: #232f3e;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  padding: 0px 15px;
+  position: fixed;
+  top: 60px;
+  z-index: 999;
+  margin-top: 0;
+  overflow-x: auto;
+  
+}
+
+.navOptions::-webkit-scrollbar {
+  display: none;
+}
+
+.navOptions a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.navOptions a:hover {
+  border-color: white;
+}
+
+.navOptions i {
+  font-size: 1.1rem;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.amazonCarousel {
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.amazonMainCarousel {
+  padding: 0;
+}
+
+
+.gridcardrow {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin-top: -250px;
+  
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.upperRowCard {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.gridCards {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-height: 420px;
+  padding: 20px;
+  background-color: white;
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.gridCards h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.gridCards a {
+  text-decoration: none;
+  color: #007185;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 10px;
+}
+
+.gridCards a:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+.cardItems {
+  margin: 0 -5px;
+}
+
+.cardItems .col-6 {
+  padding: 5px;
+}
+
+.col-6 img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.col-6 p {
+  font-size: 0.8rem;
+  color: #111;
+  margin-bottom: 0;
+}
+
+
+.signin-card {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.signin-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.signin-card .btn {
+  width: 100%;
+  max-width: 200px;
+}
+
+
+.TodaysDealCarousel {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dealcarousel {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.dealcarousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.dealcarousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.itemCard {
+  min-width: 200px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.itemCard img {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.dealCar {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.essentialProducts {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  max-width: 1500px;
+  margin: 20px auto;
+}
+
+.essentialCarousel {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  width: 100%;
+  gap: 20px;
+}
+
+.essentialCard {
+  min-width: 200px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.essentialCard img {
+  height: 180px;
+  object-fit: contain;
+}
+
+.essenthead {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+
+.backtotop {
+  margin-top: 40px;
+  height: 50px;
+  background: #37475a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backtotop a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.backtotop a:hover {
+  background-color: #485769;
+}
+
+.amazonBio {
+  background-color: #232f3e;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  border-top: 1px solid #3a4553;
+}
+
+.logamazon img {
+  margin-bottom: 10px;
+}
+
+
+.product-card {
+  transition: transform 0.2s;
+  border: 1px solid #eee;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add-cart {
+  background-color: #ffd814;
+  border-color: #fcd200;
+  border-radius: 20px;
+}
+
+.btn-add-cart:hover {
+  background-color: #f7ca00;
+}
+
+
+.product-section-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.product-image-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-image {
+  height: 180px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 1rem;
+  height: 40px;
+  overflow: hidden;
+  font-weight: bold;
+  color: black !important;
+}
+
+.qty-display {
+  color: #000 !important;
+  background-color: #fff !important;
+  font-weight: bold;
+  cursor: default;
+  min-width: 40px;
+  opacity: 1 !important;
+  border-color: #6c757d;
+}
+
+
+.support-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.support-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.support-img-container {
+  height: 250px;
+  
+  overflow: hidden;
+}
+
+.support-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  object-position: center;
+}
+
+
+.btn-amazon {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  color: #111;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  transition: all 0.2s ease;
+}
+
+.btn-amazon:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.8);
+  color: #111;
+}

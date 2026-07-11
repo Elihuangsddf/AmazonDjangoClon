@@ -1,0 +1,162 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Amazon Clone{% endblock %}
+
+{% block content %}
+<section class="container-fluid amazonCarousel">
+  <div class="amazonMainCarousel">
+    <img
+      src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wearables/New-Launches/Boat-Extend/Boat_Xtend_TallHero_1500x600._CB665925268_.jpg"
+      class="d-block w-100" alt="Banner Principal" />
+  </div>
+</section>
+
+<section class="gridcardrow">
+  <div class="upperRowCard">
+
+    
+    <div class="gridCards">
+      <h4>Mejora tu espacio con lo ultimo en Electronica</h4>
+      <div class="row cardItems">
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV6._SY116_CB409720255_.jpg"
+            alt="32 inch TV">
+          <p>32 inch TV</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/Kamya/D23607843_IN_HETV_BAU_QC_186x116_4._SY116_CB667347812_.jpg"
+            alt="Smart TV">
+          <p>Smart TV</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV2._SY116_CB409720252_.jpg"
+            alt="Premium">
+          <p>Premium</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV4._SY116_CB409720255_.jpg"
+            alt="Ver todos">
+          <p>Alta calidad</p>
+        </div>
+      </div>
+      <a href="{% url 'electronica:index' %}" class="btn btn-warning">Ver más</a>
+    </div>
+
+    
+    <div class="gridCards">
+      <h4>Estilos para todo el mundo</h4>
+      <div class="row cardItems">
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/1._SY116_CB656506073_.jpg"
+            alt="Ropa">
+          <p>Ropa</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/2._SY116_CB656506073_.jpg"
+            alt="Zapatos">
+          <p>Zapatos</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/3._SY116_CB656506073_.jpg"
+            alt="Relojes">
+          <p>Relojes</p>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/4._SY116_CB656506073_.jpg"
+            alt="Joyas">
+          <p>Joyas</p>
+        </div>
+      </div>
+      <a href="{% url 'moda:index' %}" class="btn btn-warning">Ver más</a>
+    </div>
+
+
+
+    
+    <div class="gridCards">
+      <h4>Computadoras y Laptops</h4>
+      <div class="row cardItems">
+        <div class="col-12">
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Laptops_379x304_1X_en_US._SY304_CB418608471_.jpg"
+            alt="Laptops" style="width: 100%; height: 280px; object-fit: cover;">
+        </div>
+      </div>
+      <a href="{% url 'computadoras:index' %}" class="btn btn-warning">Ver más</a>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="TodaysDealCarousel">
+  <h5 class="dealCar">Ofertas Del Día Que No Puedes Perder</h5>
+  <div class="dealcarousel">
+    <div class="itemCard">
+      <img src="https://m.media-amazon.com/images/I/31348z5DSJL.__AC_SY200_.jpg" alt="Oferta 1" />
+      <p class="text-danger fw-bold">$1,999.00</p>
+    </div>
+    <div class="itemCard">
+      <img src="https://m.media-amazon.com/images/I/51UHoxzInpL.__AC_SY200_.jpg" alt="Oferta 2" />
+      <p class="text-danger fw-bold">$61,900</p>
+    </div>
+    <div class="itemCard">
+      <img src="https://m.media-amazon.com/images/I/51JU8ZlLATL.__AC_SY200_.jpg" alt="Oferta 3" />
+      <p class="text-danger fw-bold">$3,890</p>
+    </div>
+    <div class="itemCard">
+      <img src="https://m.media-amazon.com/images/I/41Y1oURL-jL.__AC_SY200_.jpg" alt="Oferta 4" />
+      <p class="text-danger fw-bold">$3,890</p>
+    </div>
+    <div class="itemCard">
+      <img src="https://m.media-amazon.com/images/I/51dJzBptMIL.__AC_SY200_.jpg" alt="Oferta 5" />
+      <p class="text-danger fw-bold">$899.00</p>
+    </div>
+  </div>
+</section>
+
+<section class="essentialProducts">
+  <h5 class="essenthead">Productos alimenticios esenciales</h5>
+  <div class="essentialCarousel">
+    <div class="essentialCard">
+      <img src="https://m.media-amazon.com/images/I/41nSaQ7kpEL._AC_SY200_.jpg" alt="Esencial 1" />
+    </div>
+    <div class="essentialCard">
+      <img src="https://m.media-amazon.com/images/I/51B3UjhVTKL._AC_SY200_.jpg" alt="Esencial 2" />
+    </div>
+    <div class="essentialCard">
+      <img src="https://m.media-amazon.com/images/I/41nhBCXKO9L._AC_SY200_.jpg" alt="Esencial 3" />
+    </div>
+    <div class="essentialCard">
+      <img src="https://m.media-amazon.com/images/I/518I58T1eLL._AC_SY200_.jpg" alt="Esencial 4" />
+    </div>
+    <div class="essentialCard">
+      <img src="https://m.media-amazon.com/images/I/418FG+HoyqL._AC_SY200_.jpg" alt="Esencial 5" />
+    </div>
+  </div>
+</section>
+
+<div class="card support-card h-100">
+  <div class="support-img-container">
+    <img
+      src="https://images.unsplash.com/photo-1662947368907-808ab49b9495?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9nb3RpcG8lMjBkZSUyMGFtYXpvbnxlbnwwfHwwfHx8MA%3D%3D"
+      alt="Servicio al Cliente" class="card-img-top support-img">
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title fw-bold">¿Necesitas ayuda?</h5>
+    <p class="card-text text-muted small mb-4">
+      Contáctanos para resolver tus dudas o problemas con tus pedidos.
+    </p>
+    <a href="{% url 'Contacto' %}" class="btn btn-amazon w-100">Contactar Soporte</a>
+  </div>
+</div>
+{% endblock %}

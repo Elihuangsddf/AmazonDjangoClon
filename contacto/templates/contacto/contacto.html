@@ -1,0 +1,143 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .contenedorFormulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        background-color: #eaeded;
+        min-height: 80vh;
+    }
+
+    .card-contacto {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .card-contacto h2 {
+        color: #111;
+        margin-bottom: 25px;
+        font-family: "Amazon Ember", Arial, sans-serif;
+        font-weight: 400;
+    }
+
+    .tabla-estilo {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    .tabla-estilo th {
+        text-align: right;
+        padding-right: 20px;
+        color: #111;
+        font-weight: 700;
+        vertical-align: middle;
+        width: 30%;
+        font-family: "Amazon Ember", Arial, sans-serif;
+        font-size: 13px;
+    }
+
+    .tabla-estilo td {
+        width: 70%;
+        vertical-align: middle;
+    }
+
+    .tabla-estilo input,
+    .tabla-estilo select,
+    .tabla-estilo textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #a6a6a6;
+        border-radius: 3px;
+        background-color: #fff;
+        box-sizing: border-box;
+        font-size: 14px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 1px 0 rgba(0, 0, 0, .07) inset;
+        transition: border 0.3s;
+    }
+
+    .tabla-estilo textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .tabla-estilo input:focus,
+    .tabla-estilo textarea:focus {
+        border-color: #e77600;
+        box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
+        outline: none;
+    }
+
+    .btn-enviar {
+        background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+        border-color: #a88734 #9c7e31 #846a29;
+        color: #111;
+        padding: 8px 20px;
+        border-radius: 3px;
+        border-style: solid;
+        border-width: 1px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 10px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset;
+    }
+
+    .btn-enviar:hover {
+        background: linear-gradient(to bottom, #f5d78e, #eeb933);
+    }
+
+    .mensaje-exito {
+        color: #155724;
+        background-color: #d4edda;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border: 1px solid #c3e6cb;
+    }
+
+    .errorlist {
+        color: #c40000;
+        font-size: 12px;
+        list-style: none;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+
+<div class="contenedorFormulario">
+
+    <div class="card-contacto">
+        <h2>Contáctanos</h2>
+
+        {% if 'valido' in request.GET %}
+        <div class="mensaje-exito">Gracias por contactarnos</div>
+        {% endif %}
+
+        <form action="{% url 'Contacto' %}" method="POST">
+            {% csrf_token %}
+
+            {{ formulario.non_field_errors }}
+
+            <table class="tabla-estilo">
+                {{ formulario.as_table }}
+            </table>
+
+            <input type="submit" value="Enviar" class="btn-enviar">
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

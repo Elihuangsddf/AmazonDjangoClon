@@ -1,0 +1,118 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Carrito de Compras - Amazon Clone{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="min-height: 60vh;">
+    <h2 class="mb-4">Tu Carrito de Amazon</h2>
+
+    {% if request.session.carrito.items %}
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0 align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" class="ps-4">Producto</th>
+                                    <th scope="col" class="text-center">Precio</th>
+                                    <th scope="col" class="text-center">Cantidad</th>
+                                    <th scope="col" class="text-end pe-4">Subtotal</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for key, value in request.session.carrito.items %}
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            {% if value.imagen %}
+                                            <img src="{{ value.imagen }}" alt="{{ value.nombre }}"
+                                                class="img-fluid rounded me-3"
+                                                style="width: 80px; height: 80px; object-fit: contain;">
+                                            {% else %}
+                                            <img src="https://via.placeholder.com/80" alt="Sin imagen"
+                                                class="img-fluid rounded me-3"
+                                                style="width: 80px; height: 80px; object-fit: contain;">
+                                            {% endif %}
+                                            <div>
+                                                <h5 class="mb-1" style="font-size: 1rem;">{{ value.nombre }}</h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        {% if value.precioUnitario %}
+                                        ${{ value.precioUnitario|floatformat:2 }}
+                                        {% else %}
+                                        ${{ value.precio|floatformat:2 }}
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            {% if value.app_name %}
+                                            <a href="{% url 'carrito:restar' value.app_name value.productoId %}"
+                                                class="btn btn-outline-secondary">-</a>
+                                            <span class="btn btn-outline-secondary disabled qty-display">
+                                                {{ value.cantidad }}</span>
+                                            <a href="{% url 'carrito:agregar' value.app_name value.productoId %}"
+                                                class="btn btn-outline-secondary">+</a>
+                                            {% else %}
+                                            <button class="btn btn-outline-secondary" disabled>-</button>
+                                            <span class="btn btn-outline-secondary disabled qty-display"
+                                                style="color: #000; font-weight: bold; background-color: #fff; cursor: default; min-width: 40px;">{{
+                                                value.cantidad }}</span>
+                                            <button class="btn btn-outline-secondary" disabled>+</button>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                    <td class="text-end pe-4 fw-bold">${{ value.precio|floatformat:2 }}</td>
+                                    <td class="text-end">
+                                        {% if value.app_name %}
+                                        <a href="{% url 'carrito:eliminar' value.app_name value.productoId %}"
+                                            class="text-danger" title="Eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                        {% else %}
+                                        <span class="text-muted" title="Item inválido"><i
+                                                class="fas fa-trash-alt"></i></span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <a href="{% url 'carrito:limpiar' %}" class="btn btn-outline-danger btn-sm">Vaciar Carrito</a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mt-4 mt-lg-0">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Resumen del Pedido</h5>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Subtotal ({{ request.session.carrito|length }} productos):</span>
+                        <span class="fw-bold fs-5">${{ totalCarrito|floatformat:2 }}</span>
+                    </div>
+                    <hr>
+                    <button class="btn btn-warning w-100 rounded-pill fw-bold">Proceder al pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <img src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
+            alt="Carrito vacío" class="mb-4" style="width: 200px;">
+        <h3>Tu carrito de Amazon está vacío</h3>
+        <p class="text-muted">¡Encuentra ofertas increíbles hoy!</p>
+        <a href="{% url 'index' %}" class="btn btn-warning mt-3">Continuar comprando</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
